@@ -20,19 +20,18 @@ beforeEach(async () => {
   await noteObject.save();
 });
 
-test.only('notes are returned as json', async () => {
+test("notes are returned as json",  async () => {
   await api
-    .get('/api/notes')
+    .get("/api/notes")
     .expect(200)
-    .expect('Content-Type', /application\/json/)
-})
+    .expect("Content-Type", /application\/json/);
+});
 
-test.only('there are two notes', async () => {
-  const response = await api.get('/api/notes')
+test("there are two notes",  async () => {
+  const response = await api.get("/api/notes");
 
-  assert.strictEqual(response.body.length, 2)
-})
-
+  assert.strictEqual(response.body.length, 2);
+});
 
 test("the first note is about HTTP methods", async () => {
   const response = await api.get("/api/notes");
