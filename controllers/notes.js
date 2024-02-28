@@ -21,6 +21,7 @@ notesRouter.post('/', async (request, response) => {
 notesRouter.get('/:id', async (request, response) => {
   const note = await Note.findById(request.params.id)
   if (note) {
+    console.log(typeof(note.id));
     response.json(note)
   } else {
     response.status(404).end()
