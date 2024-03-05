@@ -1,7 +1,7 @@
 const assert = require("node:assert");
-const { beforeEach, describe, it } = require("node:test");
+const { beforeEach, describe, it,after } = require("node:test");
 describe("Basic math operations", () => {
-  beforeEach(() => console.log("about to run some test"));
+  beforeEach(() => console.log("--------------------------------about to run some test----------------------------------"));
 
   describe(" combined ", () => {
     it("should add two numbers correctly", () => {
@@ -25,3 +25,7 @@ describe("Basic math operations", () => {
     assert.strictEqual(result, 5);
   });
 });
+
+after( async() => {
+  console.log("------------------------------------------------------------------------------------------");
+})
